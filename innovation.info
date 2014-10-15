@@ -26,8 +26,8 @@ stylesheets[all][] = css/grid.css
 stylesheets[all][] = css/buttons.css
 stylesheets[all][] = css/forms.css
 stylesheets[all][] = css/nav.css
-stylesheets[all][] = sites/all/libraries/font-awesome/css/font-awesome.min.css
-stylesheets[all][] = sites/all/libraries/roboto/css/roboto.css
+;stylesheets[all][] = profiles/openasu/libraries/fontawesome/css/font-awesome.min.css
+stylesheets[all][] = fonts/roboto/css/roboto.css
 
 ; Scripts
 
