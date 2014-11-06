@@ -450,4 +450,38 @@ alert-warning a.close:hover {
 	
 }
 
-
+/* Added new width fix */
+.section > .container {
+  width: 100%;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+.section > .container .row {
+  max-width: 1170px;
+  margin: 0 auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.section > .container .row-full {
+  width: 100%;
+  max-width: none;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+.section > .container .row-full .col-md-12 {
+  padding-left:0;
+  padding-right:0;
+}
+.section > .container .row-full [class^="pane-"] {
+  max-width: 1170px;
+  margin: 0 auto;
+}
+.section > .container .row-full .maxpayne [class^="pane-"]{
+  width:100% !important;
+  padding-left:0;
+  padding-right:0;
+  margin-left:0;
+  margin-right:0;
+  max-width:none !important;
+}
+#footer{background-color:#1E1E1E}
