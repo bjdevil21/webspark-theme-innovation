@@ -98,7 +98,7 @@
 
 
 	<!-- Nav Bar -->
-	<div id="test" class="navmenu">
+	<div id="ASUNavMenu" class="navmenu">
 		<div class="container">
       <!--Commented to work with mega menu-->
                      <nav class="navbar-collapse collapse">
