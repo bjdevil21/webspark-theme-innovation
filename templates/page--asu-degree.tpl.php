@@ -84,6 +84,8 @@ if (is_numeric(arg(1))) {
 else {
   $node_info = array();
 }
+
+//dpm(get_defined_vars());
 ?>
 
 <div id="page-wrapper">
@@ -134,6 +136,9 @@ else {
                     <?php print $title; ?>
                     <?php if (isset($node_info['field_asu_degree']['#items'][0]['value'])): ?>
                       (<?php print render($node_info['field_asu_degree']['#items'][0]['value']); ?>)
+                    <?php endif; ?>
+                    <?php if (isset($node_info['field_asu_degree_acc_program']['#items'][0]['value'])): ?>
+                      <span class="asu-degrees-accelerated">Accelerated Degree</span>
                     <?php endif; ?>
                   </h1>
                 <?php endif; ?>
@@ -305,13 +310,16 @@ else {
                 <a href="https://transfer.asu.edu/">Transfer</a><br>
                 <a
                   href="https://students.asu.edu/international">International</a><br>
-                <a href="https://students.asu.edu/readmission">Readmission</a>
+                <a href="https://students.asu.edu/readmission">Readmission</a><br>
+                <?php if (isset($node_info['field_asu_degree_additional_req']['#items'][0]['url'])): ?>
+                  <a href="<?php echo $node_info['field_asu_degree_additional_req']['#items'][0]['url']; ?>">Additional Requirements</a>
+                <?php endif ?>
               </p>
             </div>
             <div class="col-sm-6 col-md-4">
               <h2>Affording College</h2>
 
-              <p><!--https://students.asu.edu/scholarships-->
+              <p>
                 <?php if (isset($node_info['field_scholarship_link']['#items'][0]['url'])): ?>
                   <a href="<?php echo $node_info['field_scholarship_link']['#items'][0]['url'] ?>">Scholarships</a><br>
                 <?php else: ?>
@@ -320,7 +328,7 @@ else {
                 Find and apply for relevant scholarships.
               </p>
 
-              <?php if (isset($node_info['field_asu_degree_wue_available']['#items'][0]['value'])): ?>
+              <?php if (isset($node_info['field_asu_degree_wue_available']['#items'][0]['value']) && $node_info['field_asu_degree_wue_available']['#items'][0]['value'] == 1): ?>
                 <p>
                   <?php if (isset($node_info['field_asu_degree_wue_link']['#items'][0]['url'])): ?>
                     <a href="<?php echo $node_info['field_asu_degree_wue_link']['#items'][0]['url'] ?>">WUE eligible program</a><br>
