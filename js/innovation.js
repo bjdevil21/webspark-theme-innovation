@@ -34,10 +34,14 @@
 	});
 	//Fixes all anchor tags with hashes
 	$('a').on('click',function(e){
-		var url = $(this).attr('href');
-		if (url.slice(0,1)=='#') {
-			e.preventDefault();
-			smoothScroll(url);
+		var $this = $(this);
+		var url = $this.attr('href');
+		var cls = $this.attr('class');
+		if (!$this.hasClass('accordion-toggle') && !$this.closest('ui-tabs').length == 0 && $this.closest('nav-tabs').length == 0) {
+			if (url.slice(0,1)=='#') {
+				e.preventDefault();
+				smoothScroll(url);
+			}
 		}
 	});
 	//Fixes onload scroll to the hash that originates from page URL
